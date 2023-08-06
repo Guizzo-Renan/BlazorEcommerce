@@ -1,0 +1,121 @@
+@page "/detalhes"
+
+@inject ProdutoService produtoService
+
+@inject CarrinhoService carrinhoService
+
+
+
+<link href="Detalhes.razor.css" rel="stylesheet" />
+
+<h3>Detalhes do Produto</h3>
+
+@if (produtoSelecionado != null)
+{
+    <div class="detalhes-container">
+        <div class="produto-info">
+            <img src="@produtoSelecionado.Imagem" alt="@produtoSelecionado.Nome" />
+            <h4>@produtoSelecionado.Nome</h4>
+            <p>Custo: @produtoSelecionado.Custo</p>
+            <p>Vendas: @produtoSelecionado.Vendas</p>
+            @if (produtoSelecionado.Promocao)
+            {
+                <p><strong>Promoção!</strong></p>
+            }
+            <p>Descrição: @produtoSelecionado.Descricao</p>
+           
+        </div>
+
+        <div class="botoes-inputs">
+             <div class="nota-produto">
+                   
+                <div class="stars">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <span class="star @((i <= produtoSelecionado.Nota) ? "filled" : "")">★</span>
+                    }
+                </div>
+            </div>
+            <!-- Contador de quantidade de produtos -->
+     
+             <div class="cep-produto">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep"/>
+            </div>
+
+            <!-- Botão para calcular frete -->
+            <button class="btn-calcular-frete" @onclick="CalcularFrete">Calcular Frete</button>
+       
+            <!-- Botão para adicionar ao carrinho -->
+            <button class="btn-adicionar-carrinho" @onclick="AdicionarAoCarrinho">Adicionar ao Carrinho</button>
+
+              <div class="quantidade-produto">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" @bind="quantidadeProduto" />
+            </div>
+       
+        </div>
+    </div>
+
+}
+else
+{
+    <p>Produto não encontrado.</p>
+}
+
+@code {
+//@page "/detalhes/{id}"
+    private int quantidadeProduto = 1;
+//<p>Nota: @produtoSelecionado.Nota</p>
+
+[Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private Produto produtoSelecionado;
+
+     protected override void OnInitialized()
+    {
+        produtoSelecionado = produtoService.ObterItensDoCarrinho();
+    }
+      private void AdicionarAoCarrinho()
+    {
+       if (produtoSelecionado != null)
+        {
+            carrinhoService.AdicionarItemCarrinho(produtoSelecionado.Id, produtoSelecionado.Nome, produtoSelecionado.Preco, produtoSelecionado.Imagem, quantidadeProduto);
+           // NavigationManager.NavigateTo("carrinho");
+           NavigationManager.NavigateTo($"/carrinho");
+        }
+        else
+        {
+            // Handle the case when 'produtoSelecionado' is null, e.g., show an error message or redirect to a different page
+            // For example, you can show an alert message:
+            //await js.InvokeAsync("alert", "Produto não encontrado.");
+        }
+    }
+      //   carrinhoService.AdicionarItemCarrinho(produtoSelecionado.Id, produtoSelecionado.Nome, produtoSelecionado.Preco, quantidadeProduto);
+       
+        // NavigationManager.NavigateTo($"/carrinho");
+   
+
+
+    /*
+      carrinhoService.AdicionarItemCarrinho(new ItemCarrinho
+        {
+            Produto = produto,
+            Quantidade = 1
+        });
+    */
+
+    private void CalcularFrete()
+    {
+        // Adicione o código para calcular o frete aqui
+    }
+
+    /*
+ private NavigationManager NavigationManager { get; set; }
+ NavigationManager.NavigateTo($"/carrinho");
+*/
+
+}
+
+

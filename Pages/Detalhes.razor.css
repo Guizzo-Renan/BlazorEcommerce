@@ -1,0 +1,124 @@
+/* Estilo para a área de detalhes do produto */
+.detalhes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /*box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);*/
+}
+
+/* Estilo para a imagem do produto */
+.produto-info img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+   /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);*/
+}
+
+/* Estilo para as informações do produto */
+.produto-info h4 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.produto-info p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para a mensagem de promoção */
+.produto-info p strong {
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo para a área de botões e inputs */
+.botoes-inputs {
+    display: flex;
+    flex-direction: column;
+  /*  align-items: center;*/
+}
+
+/* Estilo para o contador de quantidade de produtos */
+.quantidade-produto {
+    display: flex;
+    align-items: center;
+    /*margin-bottom: 10px;*/
+    margin-top: 40px;
+}
+
+.quantidade-produto label {
+   
+    margin-right: 10px;
+}
+
+/* Estilo para o cep */
+.cep-produto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cep-produto label {
+    margin-right: 15px;
+}
+
+/* Estilo para os botões */
+.btn-adicionar-carrinho,
+.btn-calcular-frete {
+    margin: 10px;
+    padding: 10px 20px;
+  /*  background-color: #007bff;*/
+  /*  background-color: #424242;*/
+  border: 1px solid #1a1a1a;
+  
+  /*border-style: solid;
+  border-color: #cacaca;*/
+  background: transparent;
+   /* color: #fff;*/
+   color: #1d1d1d;
+   /* border: none;*/
+   /* border-radius: 1px;*/
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-adicionar-carrinho:hover,
+.btn-calcular-frete:hover {
+   /* background-color: #0056b3;*/
+   color: #ffffff;
+   background-color: #252525;
+}
+
+/* Estilo para a nota do produto */
+.produto-info p:last-child {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+
+.nota-produto {
+  /*  display: flex;*/
+    
+    margin-bottom: 20px;
+}
+
+.stars {
+    display: flex;
+    /*margin-left: 5px;*/
+}
+
+.star {
+    font-size: 24px;
+}
+
+.star.filled {
+    color: gold;
+}

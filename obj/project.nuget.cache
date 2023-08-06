@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "f7zw8V0fKrgK6d0Dj625CYozJipFh7Ea3FO/2Ij0tmBDSdYdisyUq79Y4FDFyC4sGDOHuU12vWpRkXfqNJjt0A==",
+  "success": true,
+  "projectFilePath": "/home/renan/Projetos2/APP/Fontend/BlazorApp/BlazorApp.csproj",
+  "expectedPackageFiles": [
+    "/home/renan/.nuget/packages/blazorise/1.2.4/blazorise.1.2.4.nupkg.sha512",
+    "/home/renan/.nuget/packages/blazorise.licensing/1.1.0/blazorise.licensing.1.1.0.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.authorization/6.0.18/microsoft.aspnetcore.authorization.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.components/6.0.18/microsoft.aspnetcore.components.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.components.analyzers/6.0.18/microsoft.aspnetcore.components.analyzers.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.components.forms/6.0.18/microsoft.aspnetcore.components.forms.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.components.web/6.0.18/microsoft.aspnetcore.components.web.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.aspnetcore.metadata/6.0.18/microsoft.aspnetcore.metadata.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.1/microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.4/microsoft.extensions.logging.abstractions.6.0.4.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/renan/.nuget/packages/microsoft.jsinterop/6.0.18/microsoft.jsinterop.6.0.18.nupkg.sha512",
+    "/home/renan/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
+    "/home/renan/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

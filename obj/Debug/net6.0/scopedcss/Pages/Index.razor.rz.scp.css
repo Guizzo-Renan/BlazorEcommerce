@@ -1,0 +1,29 @@
+.grid-container[b-cawgfizwi4] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    max-width: 1400px; /* Ajuste a largura máxima do grid conforme necessário */
+    margin: 0 auto;
+  }
+  
+  .grid-item[b-cawgfizwi4] {
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Estilo para a imagem que ocupa duas colunas e duas linhas */
+  .grid-item-large[b-cawgfizwi4] {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  img[b-cawgfizwi4] {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    display: block;
+  }

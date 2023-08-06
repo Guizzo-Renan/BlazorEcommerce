@@ -1,0 +1,84 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorApp
+build_property.RootNamespace = BlazorApp
+build_property.ProjectDir = /home/renan/Projetos2/APP/Fontend/BlazorApp/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/renan/Projetos2/APP/Fontend/BlazorApp
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Carrinho.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FycmluaG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Finalizacao-pedido.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmluYWxpemFjYW8tcGVkaWRvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Catalogo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0YWxvZ28ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ccp5yv8siq
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Detalhes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV0YWxoZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wz9uzgpa43
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-cawgfizwi4
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Produtos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHV0b3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-uereroqbte
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Slider.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2xpZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0h09n06e7j
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3ij3p7wwc4
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-wk4bcz64v1
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/renan/Projetos2/APP/Fontend/BlazorApp/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

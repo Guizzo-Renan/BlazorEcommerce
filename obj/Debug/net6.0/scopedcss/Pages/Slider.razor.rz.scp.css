@@ -1,0 +1,187 @@
+.product-image img[b-0h09n06e7j] {
+  max-width: 100%;
+  max-height: 300px; /* Ajuste a altura da imagem conforme necessário */
+  
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* Estilo para detalhes do produto */
+.product-details[b-0h09n06e7j] {
+  display: flex;
+  flex-direction: column;
+  /*margin: 10%;*/
+  margin: 10px;
+}
+
+.product-details h2[b-0h09n06e7j] {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-details h4[b-0h09n06e7j] {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product-details p[b-0h09n06e7j] {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/*class="slider-image"*/
+/* Estilo para os botões */
+.btn[b-0h09n06e7j] {
+  margin-top: 200px;
+}
+
+.btn-detalhes[b-0h09n06e7j] {
+  padding: 10px 50px;
+  font-size: 16px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-add-carrinho[b-0h09n06e7j] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btn-detalhes[b-0h09n06e7j] {
+  background-color: #fff;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.btn-add-carrinho[b-0h09n06e7j] {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilo para o container principal */
+.container[b-0h09n06e7j] {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilo para o container de descrição */
+.descricao-container[b-0h09n06e7j] {
+  width: 100%;
+  max-width: 1200px; /* Ajuste a largura máxima conforme necessário */
+  height: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Estilo para o container do slider */
+.slider-container[b-0h09n06e7j] {
+  width: 100%;
+  max-width: 800px; /* Ajuste a largura máxima conforme necessário */
+  height: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilo para o wrapper das imagens do slider */
+.slider-images[b-0h09n06e7j] {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo para as imagens do slider */
+.slider-image[b-0h09n06e7j] {
+  flex: 0 0 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Estilo para os botões de navegação do slider */
+.slider-button[b-0h09n06e7j] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: none;
+  color: #555;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Estilo para o botão de navegação esquerdo */
+.slider-button-left[b-0h09n06e7j] {
+  left: 10px;
+}
+
+/* Estilo para o botão de navegação direito */
+.slider-button-right[b-0h09n06e7j] {
+  right: 10px;
+}
+
+/* Estilo para dispositivos menores */
+@media screen and (max-width: 768px) {
+  .descricao-container[b-0h09n06e7j],
+  .slider-container[b-0h09n06e7j] {
+    max-width: 100%;
+  }
+
+  .descricao-container[b-0h09n06e7j] {
+    height: 400px;
+  }
+
+  .slider-container[b-0h09n06e7j] {
+    height: 400px;
+  }
+  .btn[b-0h09n06e7j] {
+    margin-top: 0;
+  }
+
+
+.btn-detalhes[b-0h09n06e7j] {
+  margin-bottom: 0;
+}
+
+.btn-detalhes[b-0h09n06e7j] {
+  padding: 5px 25px;
+  font-size: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-add-carrinho[b-0h09n06e7j] {
+  padding: 5px 10px;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+}

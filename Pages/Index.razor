@@ -1,0 +1,78 @@
+﻿@page "/"
+
+
+<h3>Home Page</h3>
+
+
+<BlazorApp.Pages.Slider Slides="slides" />
+
+
+<div class="grid-container">
+    @foreach (var image in Images)
+    {
+        <div class="grid-item @(image.OcupaDuasColunas ? "grid-item-large" : "")">
+            <a href="catalogo" @onclick="() => CliqueNaImagem(image)">
+            <img src="@image.ImageUrl" alt="Imagem" style="height: 100%;" />
+            </a>
+        </div>
+        /*style="height: 100%;*/
+        
+    }
+</div>
+
+
+@code {
+
+    private List<Slider.SliderSlide> slides = new List<Slider.SliderSlide>
+    {
+        new Slider.SliderSlide { ImageUrl = "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=684&q=80" },
+        new Slider.SliderSlide { ImageUrl = "https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" },
+        new Slider.SliderSlide { ImageUrl = "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" }
+    };
+
+
+
+  private List<ImageData> Images = new List<ImageData>
+    {
+        new ImageData { Id=1,tipo="a", ImageUrl = "https://images.unsplash.com/photo-1579065560489-989b0cc394ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=705&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=2,tipo="a", ImageUrl = "https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=3,tipo="a", ImageUrl = "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", OcupaDuasColunas = true },
+        new ImageData { Id=4,tipo="a", ImageUrl = "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=5,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1555791751-88f7ffce562d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=6,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1584841247175-4d766cefa018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=7,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = true },
+        new ImageData { Id=8,tipo="b", ImageUrl = "https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=696&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=9,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1551907234-fb773fb08a2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=756&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=10,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1618354691249-18772bbac3a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=11,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1516962126636-27ad087061cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=12,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1579065560489-989b0cc394ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=705&q=80", OcupaDuasColunas = false },
+        new ImageData { Id=13,tipo="b", ImageUrl = "https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", OcupaDuasColunas = true },
+    
+    
+    
+    };
+   
+    private class ImageData
+    {
+        public string ImageUrl { get; set; }
+        public int Id { get; set; }
+        public bool OcupaDuasColunas { get; set; }
+        public string tipo { get; set; }
+    }
+
+
+
+
+    private NavigationManager NavigationManager { get; set; }
+
+private void CliqueNaImagem(ImageData image)
+    {
+        // Implement your logic to add the product to the cart here
+     //   Console.WriteLine($"Levar para pagina de produtos desse tipo");
+    
+    //    TipoService.AdicionarTipo(image.tipo);
+
+      //  NavigationManager.NavigateTo($"/Catalogo");
+    }
+
+}

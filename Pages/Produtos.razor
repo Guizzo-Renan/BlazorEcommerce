@@ -1,0 +1,105 @@
+@page "/produtos"
+
+@inject ProdutoService ProdutoService
+
+<link href="Produtos.razor.css" rel="stylesheet" />
+
+<h3>Produtos</h3>
+
+<div class="catalogo-produtos">
+    @foreach (var produto in ListaProdutos)
+    {
+        <div class="produto-card">
+            
+     <img src="@produto.Imagem" alt="@produto.Nome" />
+            <h4>@produto.Nome</h4>
+            <p>Custo: @produto.Custo</p>
+            <p>Vendas: @produto.Vendas</p>
+            @if (produto.Promocao)
+            {
+                <p><strong>Promoção!</strong></p>
+            }
+            <button class="btn-comprar" @onclick="() => Detalhes(produto)">Comprar</button>
+        </div>
+    }
+</div>
+
+@code {
+    
+      [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+
+  private Dictionary<string, Produto> obj = new Dictionary<string, Produto>
+    {
+{ "produtox", new Produto { Id = 1, Nome = "Produto X", Custo = "100 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=684&q=80", Vendas = 10 } },
+{ "produtoy", new Produto { Id = 2, Nome = "Produto Y", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoa", new Produto { Id = 3, Nome = "Produto A", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtob", new Produto { Id = 4, Nome = "Produto B", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoc", new Produto { Id = 5, Nome = "Produto C", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1099&q=80", Vendas = 15 } },
+{ "produtod", new Produto { Id = 6, Nome = "Produto D", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1637780852590-8ab27248ec41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80", Vendas = 15 } },
+{ "produtoe", new Produto { Id = 7, Nome = "Produto E", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtof", new Produto { Id = 8, Nome = "Produto F", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1618354691249-18772bbac3a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtog", new Produto { Id = 9, Nome = "Produto E", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoh", new Produto { Id = 10, Nome = "Produto F", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1543512214-318c7553f230?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoi", new Produto { Id = 11, Nome = "Produto G", Custo = "100 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1555791751-88f7ffce562d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 10 } },
+{ "produtoj", new Produto { Id = 12, Nome = "Produto H", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtok", new Produto { Id = 13, Nome = "Produto I", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1594549181132-9045fed330ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80", Vendas = 15 } },
+{ "produtol", new Produto { Id = 14, Nome = "Produto J", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", Vendas = 15 } },
+{ "produtom", new Produto { Id = 15, Nome = "Produto K", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produton", new Produto { Id = 16, Nome = "Produto L", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1625948515291-69613efd103f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", Vendas = 15 } },
+{ "produtoo", new Produto { Id = 17, Nome = "Produto M", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1574189555774-7cbcd66d0fcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtop", new Produto { Id = 18, Nome = "Produto N", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1585459733256-a22e2b5eecf6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=694&q=80", Vendas = 15 } },
+{ "produtoq", new Produto { Id = 19, Nome = "Produto O", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1612465289702-7c84b5258fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=673&q=80", Vendas = 15 } },
+{ "produtor", new Produto { Id = 20, Nome = "Produto P", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=698&q=80", Vendas = 15 } },
+{ "produtos", new Produto { Id = 21, Nome = "Produto Q", Custo = "100 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 10 } },
+{ "produtot", new Produto { Id = 22, Nome = "Produto R", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80", Vendas = 15 } },
+{ "produtou", new Produto { Id = 23, Nome = "Produto S", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1555487505-8603a1a69755?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtov", new Produto { Id = 24, Nome = "Produto T", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80", Vendas = 15 } },
+{ "produtow", new Produto { Id = 25, Nome = "Produto U", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1549482199-bc1ca6f58502?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtoab", new Produto { Id = 26, Nome = "Produto V", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80", Vendas = 15 } },
+{ "produtoac", new Produto { Id = 27, Nome = "Produto W", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1589365278144-c9e705f843ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoad", new Produto { Id = 28, Nome = "Produto AA", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1616740540792-3daec604777d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtoae", new Produto { Id = 29, Nome = "Produto BB", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoaf", new Produto { Id = 30, Nome = "Produto CC", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1588449668365-d15e397f6787?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+ { "produtoag", new Produto { Id = 31, Nome = "Produto DD", Custo = "100 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1558121556-2a39fc528338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 10 } },
+{ "produtoai", new Produto { Id = 32, Nome = "Produto EE", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1583305727488-61f82c7eae4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoaj", new Produto { Id = 33, Nome = "Produto FF", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1566125457105-da16810455bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=685&q=80", Vendas = 15 } },
+{ "produtoak", new Produto { Id = 34, Nome = "Produto GG", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1571380401583-72ca84994796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtoal", new Produto { Id = 35, Nome = "Produto HH", Custo = "150 R$", Promocao = false, Imagem = "https://plus.unsplash.com/premium_photo-1675431443185-9d40521c8d5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=751&q=80", Vendas = 15 } },
+{ "produtoam", new Produto { Id = 36, Nome = "Produto II", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1602697027404-36d0a53aba2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoan", new Produto { Id = 37, Nome = "Produto JJ", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1625948515291-69613efd103f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", Vendas = 15 } },
+{ "produtoao", new Produto { Id = 38, Nome = "Produto KK", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1597931752949-98c74b5b159f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoap", new Produto { Id = 39, Nome = "Produto LL", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1613521140785-e85e427f8002?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoar", new Produto { Id = 40, Nome = "Produto MM", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1587017539504-67cfbddac569?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80", Vendas = 15 } },
+ { "produtoas", new Produto { Id = 41, Nome = "Produto NN", Custo = "100 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1602090573683-68c6f9228ed7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 10 } },
+{ "produtoat", new Produto { Id = 42, Nome = "Produto OO", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1533677379554-60599e0ffb2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80", Vendas = 15 } },
+{ "produtoau", new Produto { Id = 43, Nome = "Produto PP", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1622560480654-d96214fdc887?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80", Vendas = 15 } },
+{ "produtoav", new Produto { Id = 44, Nome = "Produto QQ", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1650265424401-9d34eecae180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=749&q=80", Vendas = 15 } },
+{ "produtoaw", new Produto { Id = 45, Nome = "Produto RR", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1650285110415-3561055fdd67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=749&q=80", Vendas = 15 } },
+{ "produtoax", new Produto { Id = 46, Nome = "Produto SS", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1557441327-782eea23facd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=739&q=80", Vendas = 15 } },
+{ "produtoay", new Produto { Id = 47, Nome = "Produto TT", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80", Vendas = 15 } },
+{ "produtoaz", new Produto { Id = 48, Nome = "Produto UU", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtoba", new Produto { Id = 49, Nome = "Produto VV", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80", Vendas = 15 } },
+{ "produtobb", new Produto { Id = 50, Nome = "Produto WW", Custo = "150 R$", Promocao = false, Imagem = "https://images.unsplash.com/photo-1597317628840-d3472f7aa7fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80", Vendas = 15 } },
+    };
+
+    private List<Produto> ListaProdutos => obj.Values.ToList();
+
+    private void Detalhes(Produto produto)
+    {
+        // Aqui você pode implementar a lógica para adicionar o produto ao carrinho de compras.
+        // Por exemplo, você pode armazenar os produtos selecionados em uma lista ou carrinho de compras.
+        // Para este exemplo, apenas iremos mostrar uma mensagem no console.
+       
+/*
+ private NavigationManager NavigationManager { get; set; }
+ NavigationManager.NavigateTo($"/carrinho");
+*/
+
+
+       ProdutoService.AdicionarProduto(produto);
+       //NavigationManager.NavigateTo($"/detalhes/{produto.Id}");
+       NavigationManager.NavigateTo($"/detalhes");
+    }
+}

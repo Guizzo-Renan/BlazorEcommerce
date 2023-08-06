@@ -1,0 +1,89 @@
+@page "/carrinho"
+
+@inject CarrinhoService CarrinhoService
+
+<h3>Carrinho de Compras</h3>
+
+@if (ItensCarrinho.Count > 0)
+{
+    <div class="carrinho-container">
+        @foreach (var item in ItensCarrinho)
+        {
+            <div class="carrinho-item">
+                <img src="@item.Imagem" alt="Produto" />
+                <div class="carrinho-details">
+                    <h4>@item.Nome</h4>
+                    <p>Preço/Valor: $@item.Preco</p>
+                    <p>Quantidade: @item.Quantidade</p>
+                </div>
+            </div>
+        }
+        <div class="carrinho-total">
+            <p>Total da Compra: $@TotalCompra.ToString("0.00")</p>
+        </div>
+    </div>
+      <button class="btn-finalizar" @onclick="finalizar">finalizar</button>
+}
+else
+{
+    <p>O carrinho está vazio.</p>
+}
+
+<style>
+    /* Estilo para o container principal do carrinho */
+    .carrinho-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Estilo para cada item no carrinho */
+    .carrinho-item {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    .carrinho-item img {
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+
+    .carrinho-details h4 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .carrinho-details p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    /* Estilo para o total da compra */
+    .carrinho-total {
+        width: 100%;
+        text-align: right;
+        margin-top: 20px;
+    }
+</style>
+
+@code {
+     
+    private List<ItemCarrinho> ItensCarrinho => CarrinhoService.GetItensCarrinho();
+    private decimal TotalCompra => ItensCarrinho.Sum(item => item.Preco * item.Quantidade);
+[Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+ private void finalizar()
+        {
+           NavigationManager.NavigateTo($"/finalizar-pedido");
+        }
+
+}

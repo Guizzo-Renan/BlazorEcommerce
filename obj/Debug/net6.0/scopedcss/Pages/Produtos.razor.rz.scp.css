@@ -1,0 +1,74 @@
+.catalogo-produtos[b-uereroqbte] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Estilos para o container dos cards de produto */
+.produto-card[b-uereroqbte] {
+ /* border: 1px solid #ccc;*/
+
+  padding: 10px;
+  margin: 5px;
+  width: 300px;
+ /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+}
+
+/* Estilos para a imagem do produto */
+.produto-card img[b-uereroqbte] {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Estilos para o nome do produto */
+.produto-card h4[b-uereroqbte] {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Estilos para as informações do produto */
+.produto-card p[b-uereroqbte] {
+  margin: 5px 0;
+}
+
+/* Estilos para a mensagem de promoção */
+.produto-card strong[b-uereroqbte] {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Estilos para o botão "Comprar" */
+.btn-comprar[b-uereroqbte] {
+  margin-top: 10px;
+  padding: 8px 16px;
+  /*background-color: #3498db;*/
+  border-top: 1px solid #1a1a1a;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  
+  /*border-style: solid;
+  border-color: #cacaca;*/
+  background: transparent;
+  /*background-color: #fffefe;
+  border-width: 1px;*/
+  /*color: rgb(22, 22, 22);*/
+ 
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Estilos para o botão "Comprar" quando passa o mouse */
+.btn-comprar:hover[b-uereroqbte] {
+  /*background-color: #2980b9;*/
+  background-color: #1a1a1a;
+  color: rgb(245, 245, 245);
+}
+
+
+
